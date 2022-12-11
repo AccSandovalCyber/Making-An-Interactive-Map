@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/assets/style.css" type="text/css" >         <!-- css link-->
+    <link  href="https://fonts.googleapis.com/css?family=Montserrat: 400, 400i, 700" rel ="stylesheet">       <!-- font familly link -->
+    <script src="https://code.jquery.com/jquery-3.2.1.js"></script>           <!-- jQuery link-->
+    
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.3/dist/leaflet.css" 
+    integrity="sha256-kLaT2GOSpHechhsozzB+flnD+zUyjE2LlfWPgU04xyI="
+    crossorigin=""/>                                      <!-- leaflet css API -->
+    <script src="/index.js" defer></script>
+    <script src="https://unpkg.com/leaflet@1.9.3/dist/leaflet.js"
+    integrity="sha256-WBkoXOwTeyKclOHuWtc+i2uENFpDZ9YPdf5Hf+D7ewM="
+    crossorigin=""></script>                             <!-- leaflet js API-->
+    
+
+    <title>Tailored Travel</title> 
+</head>
+
+<body>
+ 
+    <div class="nav">                                      <!-- nav bar for the user to be able to quickly locate local businesses -->  
+      <nav>
+        <ul class="nav-list">                              <!-- ul list created -->
+            <li class="nav-item"> <button class="logo-btn"> <img src="/assets/images/you-are-here.jpeg"> <a href="index.html"></a> <!-- 1st child item -->
+            </button> </a>
+            </li>    
+          <li class="nav-item">                            
+            <a href="/index.html">Home</a> </li>
+          <li class="nav-item">                             <!-- 2nd list item -->
+            <a href="/about.html">About</a></li>
+            <li class="nav-item">                           <!-- 3rd list item -->
+              <a href="/contact.html">Contact </a></li>
+          <li class="nav-item"> 
+          <button class="btn-1">Log In </button> </li>                  <!-- 4th list item is a button -->
+        </ul>
+       </nav>
+     </div>
+     <form>
+        <select id="business">
+            <option value="restaurant">Restaurants</option>
+            <option value="coffee">Coffee Shops</option>
+            <option value="hotel">Hotels</option>
+            <option value="market">Markets</option>
+        </select>
+        <button id="submit">Submit</button>
+    </form>
+
+     <main>                             <!-- main -->
+        <div class="container">
+            <H1> Tailored Travel </H1> 
+            <h2 id="the-way"> Always strive for the best way to get to your destination ! </h2>
+
+            <table role="presentation">       <!-- table start -->
+                <tbody> 
+                    <tr> 
+                        <td style src="text-align: center; border: none; padding: 0;">
+                            <div id="map" style="width: 1000px; height: 500px; position: relative; outline: none;" class="leaflet-containet"> 
+                             <script> 
+                             const map = L.map('map').setView([51.505, -0.09], 13);
+                             const tiles = L.tileLayer('https://api.maptiler.com/maps/openstreetmap/{z}/{x}/{y}.jpg?key=DkuHY9IpTnttfAmFWR7n', {
+                                 attribution:'<a href="https://www.maptiler.com/copyright/" target="_blank">&copy; MapTiler</a> <a href="https://www.openstreetmap.org/copyright" target="_blank">&copy; OpenStreetMap contributors </a>'
+                                 }).addTo(map); 
+                                 var marker = L.marker([51.505, -0.09]).addTo(map);
+                             </script>
+                             </div>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>                  <!-- table end -->
+
+    </main> 
+
+    <footer> 
+    </footer>
+
+</body>
+</html>
