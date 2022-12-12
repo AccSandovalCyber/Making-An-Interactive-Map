@@ -94,3 +94,11 @@
       align-items: center;
     }
     
+    .about-ul {
+      display: flex;
+      flex-direction: row; 
+    }
+    .about-item {
+      padding: 1rem; 
+    
+    }
